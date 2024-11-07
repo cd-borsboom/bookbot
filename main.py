@@ -7,17 +7,15 @@ def main():
     print(f"{count_words(text_file)} words found in the document\n")
     
     how_many_char_sorted = count_characters(text_file)
-    # print(sorted(how_many_char_sorted.items()))
     new_sorted_list = sorted(how_many_char_sorted.items())
-    # print(count_characters(text_file))
-    # print(new_sorted_list)
-    
+        
     for character_dic in new_sorted_list:
-        print(f"The {character_dic[0]} character was found {character_dic[1]} times")
+        if character_dic[0].isalpha():
+            print(f"The {character_dic[0]} character was found {character_dic[1]} times")
+        else:
+            pass
     
     print("--- End report ---")
-    
-    
     
 def count_words(text_file):
     words = text_file.split()
