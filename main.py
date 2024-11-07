@@ -3,7 +3,7 @@ def main():
     count_words(text_name)
     
 def count_words(text_name):
-    with open("books/frankenstein.txt") as f:
+    with open(text_name) as f:
         file_contents = f.read()
         words = file_contents.split()
         print(len(words))
