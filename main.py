@@ -1,8 +1,17 @@
 def main():
     text_name = "books/frankenstein.txt"
     text_file = read_file(text_name)
-    print(count_words(text_file))
-    print(count_characters(text_file))
+    
+    print("--- Begin report of books/frankenstein.txt ---")
+    
+    print(f"{count_words(text_file)} words found in the document\n")
+    
+    how_many_char_sorted = count_characters(text_file)
+    print(sorted(how_many_char_sorted.items()))
+    # print(count_characters(text_file))
+    # print(how_many_char_sorted)
+    
+    
     
 def count_words(text_file):
     words = text_file.split()
@@ -22,5 +31,7 @@ def count_characters(text_file):
         else:
             character_dict[character] += 1
     return character_dict
+
+
 
 main()
